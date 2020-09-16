@@ -12,19 +12,16 @@ function Logo() {
 
 function SearchBar() {
     return (
-        <div className='header__searchbar-container'>
-            <img className='header__searchbar-icon' src={searchIcon} alt='magnifying glass icon'/>
-            <p className='header__searchbar-text'>Search</p>
-        </div>
+        <input type="search" src={searchIcon} name="search" placeholder="Search" className='header__searchbar'/>
     )
 }
 
 function UploadButton() {
     return (
-        <div className='header__upload-container'>
+        <button className='header__upload-button'>
             <img className='header__upload-icon' src={uploadIcon} alt='plus sign icon'/>
             <p className='header__upload-text'>UPLOAD</p>
-        </div>
+        </button>
     )
 }
 
