@@ -1,11 +1,23 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
 .header {
     display: flex;
-    padding: 0 16px 0 16px;
+    margin: 0 $mobile-margin 0 $mobile-margin;
     flex-wrap: wrap;
     height: 169px;
 
     &__logo {
-        margin: 0 auto;
+        margin: 4px auto;
     }
 
     &__searchbar {
@@ -14,12 +26,18 @@
         width: 90vw;
         border: 1px solid #E1E1E1;
         border-radius: 5px;
-        background-color: #FAFAFA;
         background: url('../../assets/Icons/SVG/Icon-search.svg') no-repeat 15px 15px;
+        background-color: #FAFAFA;
         padding-left: 40px;
     }
 
     &__searchbar-text {
+        font-size: 0.9rem;
+    }
+
+    ::placeholder {
+        color: $primary-font-color;
+        font-family: $font-stack;
         font-size: 0.9rem;
     }
 
@@ -29,9 +47,11 @@
         align-items: center;
         height: 48.5px;
         width: 70vw;
+        font-weight: 600;
+        font-size: 0.9rem;
         border: none;
         border-radius: 5px;
-        background-color: #0095FF;
+        background-color: $accent-color;
         color: #FFFFFF;
     }
 
