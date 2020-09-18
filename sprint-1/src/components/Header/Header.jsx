@@ -3,6 +3,7 @@ import './header.scss';
 import logo from '../../assets/Logo/Logo-brainflix.svg';
 import searchIcon from '../../assets/Icons/SVG/Icon-search.svg';
 import uploadIcon from '../../assets/Icons/SVG/Icon-upload.svg';
+import AvatarImage from '../AvatarImage/AvatarImage';
 
 function Header() {
     return (
@@ -13,7 +14,7 @@ function Header() {
                 <img className='header__upload-icon' src={uploadIcon} alt='plus sign icon'/>
                 <p className='header__upload-text'>UPLOAD</p>
             </button>
-            <div className='header__avatar-container'></div>
+            <AvatarImage />
         </div>
     )
 }

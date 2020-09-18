@@ -1,0 +1,11 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+.header__avatar-container {
+    background: url('../../assets/Images/Mohan-muruge.jpg') no-repeat;
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
