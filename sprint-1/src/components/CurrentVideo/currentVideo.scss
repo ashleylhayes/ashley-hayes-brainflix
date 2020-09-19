@@ -11,18 +11,34 @@ body {
 }
 
 .current-video {
+    position: relative;
+    background-color: #000000;
+    height: 57.1875vw;
 
     &__video {
         width: 100vw;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+
+        @include tablet {
+            width: 91.1459vw;
+            margin: 0 32px;
+        }
     }
 
     &__controls-container {
         display: flex;
         justify-content: center;
+        position: absolute;
+        top: 43.75vw;
         width: 90vw;
         background-color: transparent;
         margin: 0 $mobile-margin 0 $mobile-margin;
+
+        @include tablet {
+            top: 51.25vw;
+            margin: 0 40px;
+        }
     }
 
     &__play {
@@ -38,7 +54,13 @@ body {
     &__scrubber {
         @extend .current-video__play;
         width: 45.3125vw;
-        margin: 0 8px 0 8px;
+        margin: 0 8px;
+
+        @include tablet {
+            justify-content: space-around;
+            width: 67.5781vw;
+            margin: 0 16px;
+        }
     }
 
     &__scrubber-line {
@@ -46,6 +68,21 @@ body {
         height: 4px;
         width: 34.375vw;
         border-radius: 5px;
+
+        @include tablet{
+            width: 56.6407vw;
+        }
+    }
+
+    &__scrubber-time {
+        color: #FFFFFF;
+        font-size: 0.6rem;
+        font-weight: 600;
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+        }
     }
 
     &__expand-volume {
