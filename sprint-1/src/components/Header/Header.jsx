@@ -7,7 +7,7 @@ import AvatarImage from '../AvatarImage/AvatarImage';
 
 function Header() {
     return (
-        <div className='header'>
+        <header className='header'>
             <img className='header__logo' src={logo} alt='logo with blue square with a white arrow inside, representing a play button. The word BrainFlix is written in black to the right of that.' />
             <input type="search" src={searchIcon} name="search" placeholder="Search" className='header__searchbar'/>
             <button className='header__upload-button'>
@@ -15,7 +15,7 @@ function Header() {
                 <p className='header__upload-text'>UPLOAD</p>
             </button>
             <AvatarImage />
-        </div>
+        </header>
     )
 }
 

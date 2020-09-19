@@ -1,0 +1,59 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+.current-video {
+
+    &__video {
+        width: 100vw;
+        height: auto;
+    }
+
+    &__controls-container {
+        display: flex;
+        justify-content: center;
+        width: 90vw;
+        background-color: transparent;
+        margin: 0 $mobile-margin 0 $mobile-margin;
+    }
+
+    &__play {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        width: 48px;
+        height: 30px;
+    }
+
+    &__scrubber {
+        @extend .current-video__play;
+        width: 45.3125vw;
+        margin: 0 8px 0 8px;
+    }
+
+    &__scrubber-line {
+        background-color: #000000;
+        height: 4px;
+        width: 34.375vw;
+        border-radius: 5px;
+    }
+
+    &__expand-volume {
+        @extend .current-video__play;
+        width: 79px;
+    }
+
+    &__expand {
+        margin-right: 16px;
+    }
+}
