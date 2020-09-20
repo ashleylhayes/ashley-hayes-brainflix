@@ -2,6 +2,7 @@ import React from 'react';
 import './currentVideo.scss';
 import CommentsForm from '../CommentsForm/CommentsForm'
 import Comment from '../Comment/Comment'
+import NextVideo from '../NextVideo/NextVideo';
 import videoList0 from '../../assets/Images/video-list-0.jpg';
 import playIcon from '../../assets/Icons/SVG/Icon-play.svg';
 import expandIcon from '../../assets/Icons/SVG/Icon-fullscreen.svg';
@@ -80,6 +81,7 @@ class CurrentVideo extends React.Component {
                     <CommentsForm />
                     {this.state.comments.map((content, index) => <Comment key={index} name={content.name} date={content.date} comment={content.comment} />)}
                 </div>
+                <NextVideo />
             </section>
         );
     }

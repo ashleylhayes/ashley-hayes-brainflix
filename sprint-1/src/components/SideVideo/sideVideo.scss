@@ -1,0 +1,44 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+.next-video__side-video {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.next-video__side-video-image-container {
+    width: 120px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+.next-video__side-video-image {
+    @extend .next-video__side-video-image-container;
+    object-fit: cover;
+}
+
+.next-video__side-video-info-container {
+    margin-left: 16px;
+}
+
+.next-video__side-video-title {
+    color: $primary-font-color;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.next-video__side-video-account {
+    color: $primary-font-color;
+    font-size: 0.9rem;
+    margin: 8px 0 0 0;
+}

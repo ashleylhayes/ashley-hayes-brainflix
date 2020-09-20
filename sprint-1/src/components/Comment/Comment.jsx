@@ -12,7 +12,7 @@ class Comment extends React.Component {
                 <div className='current-video__comment-info-container'>
                     <p className='current-video__comment-name'>{name}</p>
                     <p className='current-video__comment-date'>{date}</p>
-                        <p className='current-video__comment-comment'>{comment}</p>
+                    <p className='current-video__comment-comment'>{comment}</p>
                 </div>
             </div>
         )
