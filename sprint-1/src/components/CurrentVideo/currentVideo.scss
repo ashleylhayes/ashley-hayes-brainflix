@@ -57,7 +57,6 @@ body {
         margin: 0 8px;
 
         @include tablet {
-            justify-content: space-around;
             width: 67.5781vw;
             margin: 0 16px;
         }
@@ -70,7 +69,8 @@ body {
         border-radius: 5px;
 
         @include tablet{
-            width: 56.6407vw;
+            width: 53vw;
+            margin: 0 16px;
         }
     }
 
@@ -92,5 +92,58 @@ body {
 
     &__expand {
         margin-right: 16px;
+    }
+
+    &__details {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 $mobile-margin;
+        border-bottom: 1px solid #E1E1E1;
+    }
+
+    &__title {
+        color: $primary-font-color;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin: 25px 0 16px 0;
+    }
+
+    &__uploader {
+        color: $primary-font-color;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    &__date {
+        color: $secondary-font-color;
+        font-size: 0.9rem;
+        margin: 2px 0 0 8px;
+    }
+
+    &__tally-container {
+        display: flex;
+        width: 120px;
+        margin: 32px 0 24px 0;
+    }
+
+    &__tally-icon {
+        margin-right: 8px;
+    }
+
+    &__tally-text {
+        font-size: 0.9rem;
+        color: $primary-font-color;
+        margin: 0;
+    }
+
+    &__description-container {
+        margin: 0 $mobile-margin;
+    }
+
+    &__description {
+        font-size: 0.75rem;
+        letter-spacing: 0.03px;
+        line-height: 1.5;
+        margin: 24px 0 40px 0;
     }
 }
