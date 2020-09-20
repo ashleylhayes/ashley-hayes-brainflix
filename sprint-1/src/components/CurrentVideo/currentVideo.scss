@@ -146,4 +146,14 @@ body {
         line-height: 1.5;
         margin: 24px 0 40px 0;
     }
+
+    &__comments-container {
+        margin: 0 $mobile-margin;
+    }
+
+    &__comments-number {
+        color: $primary-font-color;
+        font-size: 1rem;
+        font-weight: 600;
+    }
 }

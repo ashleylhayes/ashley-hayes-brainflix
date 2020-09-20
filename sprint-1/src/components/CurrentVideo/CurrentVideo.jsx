@@ -1,5 +1,6 @@
 import React from 'react';
 import './currentVideo.scss';
+import CommentsForm from '../CommentsForm/CommentsForm'
 import videoList0 from '../../assets/Images/video-list-0.jpg';
 import playIcon from '../../assets/Icons/SVG/Icon-play.svg';
 import expandIcon from '../../assets/Icons/SVG/Icon-fullscreen.svg';
@@ -59,6 +60,7 @@ class CurrentVideo extends React.Component {
                 </div>
                 <div className='current-video__comments-container'>
                     <p className='current-video__comments-number'>3 Comments</p>
+                    <CommentsForm />
                 </div>
             </section>
         );
