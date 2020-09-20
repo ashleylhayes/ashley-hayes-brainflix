@@ -17,17 +17,17 @@ class NextVideo extends React.Component {
             sideVideoContent: [
                 {
                     image: videoList1,
-                    title: 'Become A Travel Pro In One Easy Lesson...',
+                    title: 'Become A Travel Pro In One Easy Lesson',
                     channel: 'Scotty Cranmer'
                 },
                 {
                     image: videoList2,
-                    title: 'Les Houches The Hidden Gem Of The...',
+                    title: 'Les Houches The Hidden Gem Of The Chamonix',
                     channel: 'Scotty Cranmer'
                 },
                 {
                     image: videoList3,
-                    title: 'Travel Health Useful Medical Information...',
+                    title: 'Travel Health Useful Medical Information For',
                     channel: 'Scotty Cranmer'
                 },
                 {
@@ -60,12 +60,12 @@ class NextVideo extends React.Component {
     }
     render() {
         return (
-            <div className='next-video__container'>
+            <section className='next-video__container'>
                 <p className='next-video__title'>NEXT VIDEO</p>
                 <div>
                     {this.state.sideVideoContent.map((content, index) => <SideVideo key={index} image={content.image} title={content.title} channel={content.channel} />)}
                 </div>
-            </div>
+            </section>
         );
     }
 }

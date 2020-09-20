@@ -35,6 +35,10 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     margin: 0;
+
+    @include tablet{
+        width: 175px;
+    }
 }
 
 .next-video__side-video-account {

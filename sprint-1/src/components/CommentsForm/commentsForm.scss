@@ -27,10 +27,17 @@ body {
     border-radius: 50%;
 }
 
+.current-video__comment-input-container {
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .current-video__comment-form-input {
     box-sizing: border-box;
     font-family: 'Avenir Next';
-    border: solid $accent-color 2px;
+    border: solid #E1E1E1 2px;
     border-radius: 5px;
     background-color: #FAFAFA;
     height: 96px;
@@ -39,12 +46,21 @@ body {
     resize: none;
     outline: none;
     margin: 4px 0 16px 0;
+
+    @include tablet {
+        height: 48px;
+        width: 55vw;
+    }
 }
 
 .current-video__comment-form-title {
     color: $secondary-font-color;
     font-size: 0.75rem;
     font-weight: 600;
+
+    @include tablet {
+        margin-right: 400px;
+    }
 }
 
 ::placeholder {
@@ -64,5 +80,11 @@ body {
     border-radius: 5px;
     background-color: $accent-color;
     color: #FFFFFF;
-    margin-bottom: 24px;
+    margin: 0 0 24px 0;
+
+    @include tablet {
+        width: 160px;
+        margin-right: 0;
+        //I tried every way I could think of to get rid of the margin for this button, with no luck!
+    }
 }

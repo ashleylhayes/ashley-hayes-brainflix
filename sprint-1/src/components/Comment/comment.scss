@@ -28,6 +28,10 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-left: 16px;
+
+    @include tablet {
+        justify-content: flex-start;
+    }
 }
 
 .current-video__comment-name {
@@ -41,10 +45,18 @@ body {
     color: $secondary-font-color;
     font-size: 0.9rem;
     margin: 32px 0 0 0;
+
+    @include tablet {
+        margin: 32px 0 0 8px;
+    }
 }
 
 .current-video__comment-comment {
     color: $primary-font-color;
     font-size: 0.875rem;
     line-height: 1.4;
+
+    @include tablet {
+        width: 82.0313vw;
+    }
 }

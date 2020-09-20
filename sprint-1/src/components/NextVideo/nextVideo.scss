@@ -12,6 +12,10 @@ body {
 
 .next-video__container {
     margin: 0 $mobile-margin;
+
+    @include tablet {
+        margin: 0 $tablet-margin;
+    }
 }
 
 .next-video__title {

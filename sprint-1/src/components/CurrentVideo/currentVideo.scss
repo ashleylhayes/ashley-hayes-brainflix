@@ -22,7 +22,7 @@ body {
 
         @include tablet {
             width: 91.1459vw;
-            margin: 0 32px;
+            margin: 0 4.4271vw;
         }
     }
 
@@ -99,31 +99,55 @@ body {
         flex-wrap: wrap;
         margin: 0 $mobile-margin;
         border-bottom: 1px solid #E1E1E1;
+
+        @include tablet {
+            margin: 0 $tablet-margin;
+        }
     }
 
     &__title {
         color: $primary-font-color;
         font-size: 1.5rem;
         line-height: 1.4;
+        width: 90vw;
         margin: 25px 0 16px 0;
+
+        @include tablet {
+            font-size: 2.2rem;
+        }
     }
 
     &__uploader {
         color: $primary-font-color;
         font-weight: 600;
+        width: 27.9688vw;
         margin: 0;
+
+        @include tablet {
+            width: 11.7188vw;
+        }
     }
 
     &__date {
         color: $secondary-font-color;
         font-size: 0.9rem;
+        width: 57.8125vw;
         margin: 2px 0 0 8px;
+
+        @include tablet {
+            width: 47vw;
+        }
     }
 
     &__tally-container {
         display: flex;
-        width: 120px;
+        width: 37.5vw;
         margin: 32px 0 24px 0;
+
+        @include tablet {
+            width: 13.0209vw;
+            margin: 0 0 24px 16px;
+        }
     }
 
     &__tally-icon {
@@ -138,6 +162,10 @@ body {
 
     &__description-container {
         margin: 0 $mobile-margin;
+
+        @include tablet {
+            margin: 0 $tablet-margin;
+        }
     }
 
     &__description {
@@ -145,10 +173,19 @@ body {
         letter-spacing: 0.03px;
         line-height: 1.5;
         margin: 24px 0 40px 0;
+        
+        @include tablet {
+            font-size: 0.85rem;
+            width: 67.0573vw;
+        }
     }
 
     &__comments-container {
         margin: 0 $mobile-margin;
+
+        @include tablet {
+            margin: 0 $tablet-margin;
+        }
     }
 
     &__comments-number {
