@@ -16,6 +16,10 @@ body {
     @include tablet {
         margin: 0 $tablet-margin;
     }
+
+    @include desktop {
+        border-left: 1px solid #E1E1E1;
+    }
 }
 
 .next-video__title {

@@ -60,28 +60,34 @@ class CurrentVideo extends React.Component {
                         <img className='current-video__volume' src={volumeIcon} alt='volume icon' />
                     </div>
                 </div>
-                <div className='current-video__details'>
-                    <h1 className= 'current-video__title'>{this.state.title}</h1>
-                    <p className='current-video__uploader'>By {this.state.channel}</p>
-                    <p className='current-video__date'>{this.state.timestamp}</p>
-                    <div className='current-video__tally-container'>
-                        <img className='current-video__tally-icon' src={this.state.viewsImage} alt="" />
-                        <p className='current-video__tally-text'>{this.state.views}</p>
+                <main className='current-video__all'>
+                    <div className='current-video__all-info'>
+                        <div className='current-video__details'>
+                            <h1 className= 'current-video__title'>{this.state.title}</h1>
+                            <p className='current-video__uploader'>By {this.state.channel}</p>
+                            <p className='current-video__date'>{this.state.timestamp}</p>
+                            <div className='current-video__tally-container'>
+                                <img className='current-video__tally-icon' src={this.state.viewsImage} alt="" />
+                                <p className='current-video__tally-text'>{this.state.views}</p>
+                            </div>
+                            <div className='current-video__tally-container'>
+                                <img className='current-video__tally-icon' src={this.state.likesImage} alt="" />
+                                <p className='current-video__tally-text'>{this.state.likes}</p>
+                            </div>
+                        </div>
+                        <div className='current-video__description-container'>
+                            <p className='current-video__description'>{this.state.description}</p>
+                        </div>
+                        <div className='current-video__comments-container'>
+                            <p className='current-video__comments-number'>3 Comments</p>
+                            <CommentsForm />
+                            {this.state.comments.map((content, index) => <Comment key={index} name={content.name} date={content.date} comment={content.comment} />)}
+                        </div>
                     </div>
-                    <div className='current-video__tally-container'>
-                        <img className='current-video__tally-icon' src={this.state.likesImage} alt="" />
-                        <p className='current-video__tally-text'>{this.state.likes}</p>
+                    <div>
+                        <NextVideo />
                     </div>
-                </div>
-                <div className='current-video__description-container'>
-                    <p className='current-video__description'>{this.state.description}</p>
-                </div>
-                <div className='current-video__comments-container'>
-                    <p className='current-video__comments-number'>3 Comments</p>
-                    <CommentsForm />
-                    {this.state.comments.map((content, index) => <Comment key={index} name={content.name} date={content.date} comment={content.comment} />)}
-                </div>
-                <NextVideo />
+                </main>
             </section>
         );
     }
