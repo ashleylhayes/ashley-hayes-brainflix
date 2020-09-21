@@ -15,6 +15,10 @@ body {
     background-color: #000000;
     height: 57.1875vw;
 
+    @include desktop {
+        height: 37.5vw;
+    }
+
     &__video {
         width: 100vw;
         height: 100%;
@@ -24,8 +28,13 @@ body {
             width: 91.1459vw;
             margin: 0 4.4271vw;
         }
-    }
 
+        @include desktop {
+            width: 65.5556vw;
+            margin: 0 17.2vw;
+        }
+    }
+        
     &__controls-container {
         display: flex;
         justify-content: center;
@@ -38,6 +47,11 @@ body {
         @include tablet {
             top: 51.25vw;
             margin: 0 40px;
+        }
+
+        @include desktop {
+            top: 33.5vw;
+            margin: 0 57px;
         }
     }
 
@@ -60,6 +74,10 @@ body {
             width: 67.5781vw;
             margin: 0 16px;
         }
+
+        @include desktop {
+            width: 49vw;
+        }
     }
 
     &__scrubber-line {
@@ -71,6 +89,10 @@ body {
         @include tablet{
             width: 53vw;
             margin: 0 16px;
+        }
+
+        @include desktop {
+            width: 40vw;
         }
     }
 
@@ -132,6 +154,10 @@ body {
         @include tablet {
             font-size: 2.2rem;
         }
+
+        @include desktop {
+            font-size: 1.9rem;
+        }
     }
 
     &__uploader {
@@ -142,6 +168,10 @@ body {
 
         @include tablet {
             width: 11.7188vw;
+        }
+
+        @include desktop {
+            width: 7.5vw;
         }
     }
 
@@ -154,6 +184,10 @@ body {
         @include tablet {
             width: 47vw;
         }
+
+        @include desktop {
+            width: 22.5vw;
+        }
     }
 
     &__tally-container {
@@ -164,6 +198,10 @@ body {
         @include tablet {
             width: 13.0209vw;
             margin: 0 0 24px 16px;
+        }
+
+        @include desktop {
+            width: 8.3334vw;
         }
     }
 
@@ -198,6 +236,10 @@ body {
         @include tablet {
             font-size: 0.85rem;
             width: 67.0573vw;
+        }
+
+        @include desktop {
+            width: 35.5vw;
         }
     }
 

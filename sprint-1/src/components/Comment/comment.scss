@@ -59,4 +59,8 @@ body {
     @include tablet {
         width: 82.0313vw;
     }
+
+    @include desktop {
+        width: 42.7084vw;
+    }
 }
