@@ -71,17 +71,11 @@ body {
     }
 
     &__upload-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 48px;
         width: 70vw;
-        font-weight: 600;
-        font-size: 0.9rem;
         border: none;
         border-radius: 5px;
         background-color: $accent-color;
-        color: #FFFFFF;
         margin: 8px 0 16px 0;
 
         @include tablet {
@@ -94,8 +88,15 @@ body {
         }
     }
 
+    &__upload-button-link {
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
     &__upload-icon {
         padding-right: 5px;
+        display: inline-block;
 
         @include tablet {
             padding-right: 3px;
@@ -104,6 +105,7 @@ body {
 
     &__upload-text {
         padding-left: 5px;
+        display: inline-block;
 
         @include tablet {
             padding-left: 3px;
