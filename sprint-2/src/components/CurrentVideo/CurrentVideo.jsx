@@ -1,5 +1,6 @@
 import React from 'react';
 import './currentVideo.scss';
+import Header from '../Header/Header';
 import CommentsForm from '../CommentsForm/CommentsForm'
 import Comment from '../Comment/Comment'
 import NextVideo from '../NextVideo/NextVideo';
@@ -45,6 +46,8 @@ class CurrentVideo extends React.Component {
     }
     render() {
         return (
+            <div>
+                <Header />
             <section className='current-video'>
                 <video className='current-video__video' poster={this.state.video}></video>
                 <div className='current-video__controls-container'>
@@ -89,6 +92,7 @@ class CurrentVideo extends React.Component {
                     </div>
                 </main>
             </section>
+            </div>
         );
     }
 }
