@@ -1,0 +1,38 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+.upload-video {
+    padding: 0 $mobile-margin;
+    border-top: 1px solid #E1E1E1;
+
+    &__title {
+        color: $primary-font-color;
+        font-size: 1.5rem;
+    }
+
+    &__thumbnail-title {
+        color: $secondary-font-color;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    &__thumbnail-container {
+        width: 288px;
+        height: 153px;
+        border-radius: 5px;
+    }
+
+    &__thumbnail {
+        @extend .upload-video__thumbnail-container;
+        object-fit: cover;
+    }
+}

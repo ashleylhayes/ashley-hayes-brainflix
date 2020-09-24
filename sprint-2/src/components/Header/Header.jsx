@@ -16,8 +16,10 @@ function Header() {
             <input type="search" src={searchIcon} name="search" placeholder="Search" className='header__searchbar'/>
             <button className='header__upload-button'>
                 <Link to="/videoupload" className="header__upload-button-link">
+                    <div>
                     <img className='header__upload-icon' src={uploadIcon} alt='plus sign icon'/>
                     <p className='header__upload-text'>UPLOAD</p>
+                    </div>
                 </Link>
             </button>
             <div className='header__avatar-container'></div>

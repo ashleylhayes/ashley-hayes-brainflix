@@ -33,11 +33,7 @@ body {
         margin: 12px auto;
 
         @include tablet {
-            margin: 0 19.5313vw 0 0;
-        }
-
-        @include desktop {
-            margin: 0 31.25vw 0 0;
+            margin: 0;
         }
     }
 
@@ -53,10 +49,12 @@ body {
 
         @include tablet {
             width: 253px;
+            margin-left: 19.5313vw;
         }
 
         @include desktop {
             width: 17.5695vw;
+            margin-left: 31.25vw;
         }
     }
 
