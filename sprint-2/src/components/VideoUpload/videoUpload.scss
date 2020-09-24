@@ -11,8 +11,12 @@ body {
 }
 
 .upload-video {
-    padding: 0 $mobile-margin;
-    border-top: 1px solid #E1E1E1;
+    margin: 0 $mobile-margin;
+
+    &__divider {
+        height: 3px;
+        background-image: linear-gradient(#E1E1E1, #FAFAFA, #FFFFFF);
+    }
 
     &__title {
         color: $primary-font-color;
@@ -34,5 +38,24 @@ body {
     &__thumbnail {
         @extend .upload-video__thumbnail-container;
         object-fit: cover;
+    }
+
+    &__video-title-title {
+        @extend .upload-video__thumbnail-title;
+    }
+
+    &__video-title-input {
+        box-sizing: border-box;
+        font-family: $font-stack;
+        height: 48px;
+        width: 90vw;
+        border: 1px solid #E1E1E1;
+        border-radius: 5px;
+        background-color: #FAFAFA;
+        padding-left: 16px;
+    }
+
+    ::placeholder {
+        color: $primary-font-color;
     }
 }
