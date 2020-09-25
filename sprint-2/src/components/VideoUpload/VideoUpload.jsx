@@ -18,8 +18,16 @@ class VideoUpload extends Component {
                         <img className="upload-video__thumbnail" src={uploadThumbnail} alt="" />
                     </div>
                     <form className="upload-video__form">
-                        <p className="upload-video__video-title-title">TITLE YOUR VIDEO</p>
+                        <p className="upload-video__video-title-label">TITLE YOUR VIDEO</p>
                         <input className="upload-video__video-title-input" placeholder="Add a title to your video"></input>
+                        <p className="upload-video__video-description-label">ADD A VIDEO DESCRIPTION</p>
+                        <textarea className="upload-video__video-description" placeholder="Add a description of your video"></textarea>
+                        <button className="upload-video__publish-button">
+                            PUBLISH
+                        </button>
+                        <button className="upload-video__cancel-button">
+                            CANCEL
+                        </button>
                     </form>
                 </div>
             </div>
