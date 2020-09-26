@@ -27,13 +27,6 @@ body {
     border-radius: 50%;
 }
 
-.current-video__comment-input-container {
-    @include tablet {
-        display: flex;
-        flex-wrap: wrap;
-    }
-}
-
 .current-video__comment-form-input {
     box-sizing: border-box;
     font-family: 'Avenir Next';
@@ -89,11 +82,11 @@ body {
     margin: 0 0 24px 0;
 
     @include tablet {
-        margin: 12px 0 12px 16px;
+        margin: 0 0 0 16px;
         width: 160px;
     }
 
     @include desktop {
-        margin: 12px 0 12px 12px;
+        margin: 0 0 12px 12px;
     }
 }
