@@ -261,3 +261,25 @@ body {
         font-weight: 600;
     }
 }
+
+.next-video__container {
+    margin: 0 $mobile-margin;
+
+    @include tablet {
+        margin: 0 $tablet-margin;
+    }
+
+    @include desktop {
+        margin: 0;
+        padding-left: 24px;
+        border-left: 1px solid #E1E1E1;
+    }
+}
+
+.next-video__title {
+    color: $secondary-font-color;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 40px 0;
+}
