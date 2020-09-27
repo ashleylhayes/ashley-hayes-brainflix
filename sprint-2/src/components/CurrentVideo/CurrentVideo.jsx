@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './currentVideo.scss';
 import Header from '../Header/Header';
 import CommentsForm from '../CommentsForm/CommentsForm'
@@ -38,6 +39,11 @@ class CurrentVideo extends React.Component {
                 sideVideoContent: data
             })
         })
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log(prevProps);
+        console.log(prevState);
     }
 
     render() {
@@ -87,7 +93,7 @@ class CurrentVideo extends React.Component {
                         <section className='next-video__container'>
                             <p className='next-video__title'>NEXT VIDEO</p>
                             <div>
-                                {this.state.sideVideoContent.map((content) => <SideVideo key={content.id} image={content.image} title={content.title} channel={content.channel} />)}
+                                {this.state.sideVideoContent.map((content) => <Link key={content.id} to={`/${content.id}`}><SideVideo key={content.id} image={content.image} title={content.title} channel={content.channel} /></Link>)}
                             </div>
                         </section>
                     </div>
