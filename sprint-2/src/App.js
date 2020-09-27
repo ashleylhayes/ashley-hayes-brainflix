@@ -10,7 +10,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={CurrentVideo} />
           <Route path="/videoupload" component={VideoUpload} />
-          <Route path="/:id" component={CurrentVideo} />
+          <Route path="/:id" render={(routeProps) => <CurrentVideo {...routeProps} />} />
         </Switch>
       </BrowserRouter>
     </div>

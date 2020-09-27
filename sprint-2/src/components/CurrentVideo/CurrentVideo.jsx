@@ -14,7 +14,7 @@ import axios from 'axios';
 
 const API_KEY = "?api_key=6b0f89c7-4033-408f-b97d-1440f9c4b0c4";
 const VIDEO_URL = "https://project-2-api.herokuapp.com/videos/1af0jruup5gu";
-const VIDEOS_URL = "https://project-2-api.herokuapp.com/videos";
+const VIDEOS_URL = "https://project-2-api.herokuapp.com/videos/";
 
 class CurrentVideo extends React.Component {
     state = {
@@ -24,29 +24,39 @@ class CurrentVideo extends React.Component {
     };
 
     componentDidMount() {
-        axios.get(VIDEO_URL + API_KEY).then(({ data }) => {
-            console.log(data);
-            console.log(data.comments);
-            this.setState({
-                currentVideoContent: data,
-                commentsContent: data.comments
+            axios.get(VIDEO_URL + API_KEY).then(({ data }) => {
+                console.log(data);
+                console.log(data.comments);
+                this.setState({
+                    currentVideoContent: data,
+                    commentsContent: data.comments
+                })
             })
-        })
 
-        axios.get(VIDEOS_URL + API_KEY).then(({ data }) => {
-            console.log(data);
-            this.setState({
+            axios.get(VIDEOS_URL + API_KEY).then(({ data }) => {
+                console.log(data);
+                this.setState({
                 sideVideoContent: data
+                })
             })
-        })
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps);
-        console.log(prevState);
+        const { match } = this.props;
+        const ID = match.params.id;
+        if (match.params.id !== this.state.currentVideoContent.id) {
+            axios.get(VIDEOS_URL + ID + API_KEY).then(({ data }) => {
+                this.setState({
+                    currentVideoContent: data,
+                    commentsContent: data.comments
+                })
+                window.scrollTo(0,0);
+            })
+        }
     }
 
     render() {
+        const convertedVideoDate = new Date(this.state.currentVideoContent.timestamp).toLocaleDateString("en-US");
         return (
             <div>
             <Header />
@@ -70,13 +80,13 @@ class CurrentVideo extends React.Component {
                         <div className='current-video__details'>
                             <h1 className= 'current-video__title'>{this.state.currentVideoContent.title}</h1>
                             <p className='current-video__uploader'>By {this.state.currentVideoContent.channel}</p>
-                            <p className='current-video__date'>{this.state.currentVideoContent.timestamp}</p>
+                            <p className='current-video__date'>{convertedVideoDate}</p>
                             <div className='current-video__tally-container'>
-                                <img className='current-video__tally-icon' src={viewsIcon} alt="" />
+                                <img className='current-video__tally-icon' src={viewsIcon} alt='eye icon for views' />
                                 <p className='current-video__tally-text'>{this.state.currentVideoContent.views}</p>
                             </div>
                             <div className='current-video__tally-container'>
-                                <img className='current-video__tally-icon' src={likesIcon} alt="" />
+                                <img className='current-video__tally-icon' src={likesIcon} alt='heart icon for likes' />
                                 <p className='current-video__tally-text'>{this.state.currentVideoContent.likes}</p>
                             </div>
                         </div>
@@ -86,14 +96,14 @@ class CurrentVideo extends React.Component {
                         <div className='current-video__comments-container'>
                             <p className='current-video__comments-number'>3 Comments</p>
                             <CommentsForm />
-                            {this.state.commentsContent.map((content) => <Comment key={content.id} name={content.name} date={content.timestamp} comment={content.comment} />)}
+                            {this.state.commentsContent.map((content) => <Comment key={content.id} name={content.name} date={new Date(content.timestamp).toLocaleDateString("en-US")} comment={content.comment} />)}
                         </div>
                     </div>
                     <div>
                         <section className='next-video__container'>
                             <p className='next-video__title'>NEXT VIDEO</p>
                             <div>
-                                {this.state.sideVideoContent.map((content) => <Link key={content.id} to={`/${content.id}`}><SideVideo key={content.id} image={content.image} title={content.title} channel={content.channel} /></Link>)}
+                                {this.state.sideVideoContent.map((content) => <Link className="next-video__link" key={content.id} to={`/${content.id}`}><SideVideo key={content.id} image={content.image} title={content.title} channel={content.channel} /></Link>)}
                             </div>
                         </section>
                     </div>

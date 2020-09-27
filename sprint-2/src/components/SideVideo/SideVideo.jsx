@@ -3,7 +3,7 @@ import './sideVideo.scss'
 
 class SideVideo extends React.Component {
     render() {
-        let {id, image, title, channel} = this.props;
+        let {image, title, channel} = this.props;
         return (
             <div className='next-video__side-video'>
                 <div className='next-video__side-video-image-container'>
