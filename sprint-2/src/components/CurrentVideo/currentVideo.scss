@@ -163,30 +163,30 @@ body {
     &__uploader {
         color: $primary-font-color;
         font-weight: 600;
-        width: 27.9688vw;
+        width: 45vw;
         margin: 0;
 
         @include tablet {
-            width: 11.7188vw;
+            width: 22vw;
         }
 
         @include desktop {
-            width: 7.5vw;
+            width: 13vw;
         }
     }
 
     &__date {
         color: $secondary-font-color;
         font-size: 0.9rem;
-        width: 57.8125vw;
+        width: 27.9688vw;
         margin: 2px 0 0 8px;
 
         @include tablet {
-            width: 47vw;
+            width: 40vw;
         }
 
         @include desktop {
-            width: 22.5vw;
+            width: 15vw;
         }
     }
 

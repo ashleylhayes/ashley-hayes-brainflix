@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './currentVideo.scss';
 import Header from '../Header/Header';
-import CommentsForm from '../CommentsForm/CommentsForm'
-import Comment from '../Comment/Comment'
+import CommentsForm from '../CommentsForm/CommentsForm';
+import Comment from '../Comment/Comment';
 import SideVideo from '../SideVideo/SideVideo';
 import playIcon from '../../assets/Icons/SVG/Icon-play.svg';
 import expandIcon from '../../assets/Icons/SVG/Icon-fullscreen.svg';
@@ -13,8 +13,7 @@ import likesIcon from '../../assets/Icons/SVG/Icon-likes.svg';
 import axios from 'axios';
 
 const API_KEY = "?api_key=6b0f89c7-4033-408f-b97d-1440f9c4b0c4";
-const VIDEO_URL = "https://project-2-api.herokuapp.com/videos/1af0jruup5gu";
-const VIDEOS_URL = "https://project-2-api.herokuapp.com/videos/";
+const URL = "https://project-2-api.herokuapp.com/videos/";
 
 class CurrentVideo extends React.Component {
     state = {
@@ -24,39 +23,41 @@ class CurrentVideo extends React.Component {
     };
 
     componentDidMount() {
-            axios.get(VIDEO_URL + API_KEY).then(({ data }) => {
-                console.log(data);
-                console.log(data.comments);
-                this.setState({
-                    currentVideoContent: data,
-                    commentsContent: data.comments
-                })
-            })
+        const ID = '1af0jruup5gu';
+        axios.get(URL + ID + API_KEY)
+        .then(({ data }) => {
+            this.setState({
+                currentVideoContent: data,
+                commentsContent: data.comments
+            });
+        })
+        .catch(error => console.log(error));
 
-            axios.get(VIDEOS_URL + API_KEY).then(({ data }) => {
-                console.log(data);
-                this.setState({
+        axios.get(URL + API_KEY)
+        .then(({ data }) => {
+            this.setState({
                 sideVideoContent: data
-                })
-            })
-    }
+            });
+        })
+        .catch(error => console.log(error));
+    };
 
     componentDidUpdate(prevProps, prevState) {
         const { match } = this.props;
-        const ID = match.params.id;
+        const ID = match.params.id ? match.params.id : '1af0jruup5gu';
         if (match.params.id !== this.state.currentVideoContent.id) {
-            axios.get(VIDEOS_URL + ID + API_KEY).then(({ data }) => {
+            axios.get(URL + ID + API_KEY)
+            .then(({ data }) => {
                 this.setState({
                     currentVideoContent: data,
                     commentsContent: data.comments
-                })
-                window.scrollTo(0,0);
+                });
             })
-        }
-    }
+            .catch(error => console.log(error));
+        };
+    };
 
     render() {
-        const convertedVideoDate = new Date(this.state.currentVideoContent.timestamp).toLocaleDateString("en-US");
         return (
             <div>
             <Header />
@@ -80,7 +81,7 @@ class CurrentVideo extends React.Component {
                         <div className='current-video__details'>
                             <h1 className= 'current-video__title'>{this.state.currentVideoContent.title}</h1>
                             <p className='current-video__uploader'>By {this.state.currentVideoContent.channel}</p>
-                            <p className='current-video__date'>{convertedVideoDate}</p>
+                            <p className='current-video__date'>{new Date(this.state.currentVideoContent.timestamp).toLocaleDateString("en-US")}</p>
                             <div className='current-video__tally-container'>
                                 <img className='current-video__tally-icon' src={viewsIcon} alt='eye icon for views' />
                                 <p className='current-video__tally-text'>{this.state.currentVideoContent.views}</p>
@@ -96,14 +97,31 @@ class CurrentVideo extends React.Component {
                         <div className='current-video__comments-container'>
                             <p className='current-video__comments-number'>3 Comments</p>
                             <CommentsForm />
-                            {this.state.commentsContent.map((content) => <Comment key={content.id} name={content.name} date={new Date(content.timestamp).toLocaleDateString("en-US")} comment={content.comment} />)}
+                            {this.state.commentsContent.map((content) => 
+                                <Comment 
+                                    key={content.id} 
+                                    name={content.name} 
+                                    date={new Date(content.timestamp).toLocaleDateString("en-US")} 
+                                    comment={content.comment} 
+                                />
+                            )}
                         </div>
                     </div>
                     <div>
                         <section className='next-video__container'>
                             <p className='next-video__title'>NEXT VIDEO</p>
                             <div>
-                                {this.state.sideVideoContent.map((content) => <Link className="next-video__link" key={content.id} to={`/${content.id}`}><SideVideo key={content.id} image={content.image} title={content.title} channel={content.channel} /></Link>)}
+                                {this.state.sideVideoContent.filter((content) => {
+                                    return content.id !== this.state.currentVideoContent.id;
+                                }).map((content) => 
+                                <Link className="next-video__link" key={content.id} to={`/${content.id}`}>
+                                    <SideVideo 
+                                        key={content.id} 
+                                        image={content.image} 
+                                        title={content.title} 
+                                        channel={content.channel} 
+                                    />
+                                </Link>)}
                             </div>
                         </section>
                     </div>
@@ -111,7 +129,7 @@ class CurrentVideo extends React.Component {
             </section>
             </div>
         );
-    }
-}
+    };
+};
 
 export default CurrentVideo;
