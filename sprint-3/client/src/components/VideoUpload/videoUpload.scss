@@ -1,0 +1,162 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+.upload-video {
+    margin: 0 $mobile-margin;
+
+        @include tablet {
+            margin: 0 $tablet-margin;
+        }
+
+        @include desktop {
+            margin: 0 $desktop-margin;
+        }
+
+    &__divider {
+        height: 3px;
+        background-image: linear-gradient(#E1E1E1, #FAFAFA, #FFFFFF);
+    }
+
+    &__title {
+        color: $primary-font-color;
+        font-size: 1.5rem;
+        margin: 24px 0 32px 0;
+
+        @include tablet {
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin: 0 0 40px 0;
+            padding: 48px 0 32px 0;
+            border-bottom: 1px solid #E1E1E1;
+        }
+
+        @include desktop {
+            margin: 0 0 30px 0;
+        }
+    }
+
+    &__upload-container {
+        @include desktop {
+            display: flex;
+        }
+    }
+
+    &__thumbnail-title {
+        color: $secondary-font-color;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    &__thumbnail-container {
+        width: 90vw;
+        height: 47.8125vw;
+        max-width: 344px;
+        max-height: 183px;
+        border-radius: 5px;
+        margin-bottom: 32px;
+
+        @include desktop {
+            margin-right: 24px;
+        }
+    }
+
+    &__thumbnail {
+        @extend .upload-video__thumbnail-container;
+        object-fit: cover;
+    }
+
+    &__video-title-label {
+        @extend .upload-video__thumbnail-title;
+    }
+
+    &__video-title-input {
+        box-sizing: border-box;
+        font-family: $font-stack;
+        height: 48px;
+        width: 90vw;
+        border: 1px solid #E1E1E1;
+        border-radius: 5px;
+        background-color: #FAFAFA;
+        padding-left: 16px;
+        margin-bottom: 10px;
+
+        @include tablet {
+            width: 93.75vw;
+        }
+
+        @include desktop {
+            width: 44.25vw;
+        }
+    }
+
+    ::placeholder {
+        color: $primary-font-color;
+    }
+
+    &__video-description-label {
+        @extend .upload-video__thumbnail-title;
+    }
+
+    &__video-description {
+        box-sizing: border-box;
+        font-family: 'Avenir Next';
+        border: solid #E1E1E1 1px;
+        border-radius: 5px;
+        background-color: #FAFAFA;
+        height: 143px;
+        width: 90vw;
+        padding: 16px 12px;
+        resize: none;
+        outline: none;
+        margin-bottom: 32px;
+
+        @include tablet {
+            width: 93.75vw;
+            margin-bottom: 40px;
+        }
+
+        @include desktop {
+            width: 44.25vw;
+            height: 94px;
+        }
+    }
+
+    &__button-container {
+        @include tablet {
+            display: flex;
+            flex-direction: row-reverse;
+            border-top: 1px solid #E1E1E1;
+            padding-top: 40px;
+        }
+    }
+
+    &__publish-button {
+        color: #FFFFFF;
+        font-weight: 600;
+        height: 48px;
+        width: 90vw;
+        border: none;
+        border-radius: 5px;
+        background-color: $accent-color;
+
+        @include tablet {
+            width: 160px;
+        }
+    }
+
+    &__cancel-button {
+        @extend .upload-video__publish-button;
+        color: $accent-color;
+        background-color: #FFFFFF;
+    }
+}
