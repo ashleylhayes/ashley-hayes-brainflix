@@ -97,7 +97,7 @@ class CurrentVideo extends React.Component {
                             <p className='current-video__description'>{this.state.currentVideoContent.description}</p>
                         </div>
                         <div className='current-video__comments-container'>
-                            <p className='current-video__comments-number'>3 Comments</p>
+                            <p className='current-video__comments-number'>{this.state.commentsContent.length} Comments</p>
                             <CommentsForm />
                             {this.state.commentsContent.map((content) => 
                                 <Comment 
