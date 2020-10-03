@@ -33,7 +33,7 @@ class CurrentVideo extends React.Component {
         })
         .catch(error => console.log(error));
 
-        axios.get(URL + API_KEY)
+        axios.get("/videos")
         .then(({ data }) => {
             this.setState({
                 sideVideoContent: data
