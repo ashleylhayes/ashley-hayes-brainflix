@@ -137,6 +137,7 @@ body {
             flex-direction: row-reverse;
             border-top: 1px solid #E1E1E1;
             padding-top: 40px;
+            margin-bottom: 40px;
         }
     }
 
@@ -158,5 +159,10 @@ body {
         @extend .upload-video__publish-button;
         color: $accent-color;
         background-color: #FFFFFF;
+        margin: 10px 0;
+
+        @include tablet {
+            margin: 0;
+        }
     }
 }
