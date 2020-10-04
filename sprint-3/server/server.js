@@ -3,7 +3,6 @@ const app = express();
 const axios = require('axios');
 const port = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
-const data = require('./data.json');
 
 const videoRoutes = require('./routes/videos');
 
@@ -15,7 +14,7 @@ app.use((req, res, next)=> {
     } else {
       next();
     }
-  });
+});
 
 app.use('/videos', videoRoutes)
 

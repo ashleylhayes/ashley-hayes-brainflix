@@ -12,8 +12,7 @@ import viewsIcon from '../../assets/Icons/SVG/Icon-views.svg';
 import likesIcon from '../../assets/Icons/SVG/Icon-likes.svg';
 import axios from 'axios';
 
-const API_KEY = "?api_key=6b0f89c7-4033-408f-b97d-1440f9c4b0c4";
-const URL = "https://project-2-api.herokuapp.com/videos/";
+const URL = "/videos/";
 
 class CurrentVideo extends React.Component {
     state = {
@@ -24,7 +23,7 @@ class CurrentVideo extends React.Component {
 
     componentDidMount() {
         const ID = '1af0jruup5gu';
-        axios.get(URL + ID + API_KEY)
+        axios.get(URL + ID)
         .then(({ data }) => {
             this.setState({
                 currentVideoContent: data,
@@ -33,7 +32,7 @@ class CurrentVideo extends React.Component {
         })
         .catch(error => console.log(error));
 
-        axios.get("/videos")
+        axios.get(URL)
         .then(({ data }) => {
             this.setState({
                 sideVideoContent: data
@@ -46,7 +45,7 @@ class CurrentVideo extends React.Component {
         const { match } = this.props;
         const ID = match.params.id ? match.params.id : '1af0jruup5gu';
         if (match.params.id !== this.state.currentVideoContent.id) {
-            axios.get(URL + ID + API_KEY)
+            axios.get(URL + ID)
             .then(({ data }) => {
                 console.log(data)
                 this.setState({
