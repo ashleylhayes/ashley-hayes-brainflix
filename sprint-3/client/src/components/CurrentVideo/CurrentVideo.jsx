@@ -47,7 +47,6 @@ class CurrentVideo extends React.Component {
         if (match.params.id !== this.state.currentVideoContent.id) {
             axios.get(URL + ID)
             .then(({ data }) => {
-                console.log(data)
                 this.setState({
                     currentVideoContent: data,
                     commentsContent: data.comments
@@ -55,7 +54,6 @@ class CurrentVideo extends React.Component {
             })
             .catch(error => console.log(error));
         };
-        // window.scrollTo(0,0);
     };
 
     render() {
