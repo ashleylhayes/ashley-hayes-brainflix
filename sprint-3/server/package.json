@@ -2,8 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "description": "brainflix server",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "jest"
   },
   "author": "Ashley",
@@ -14,5 +15,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
   },
-  "proxy": "http://localhost:8080/"
+  "engines": {
+    "node": "16.5.0"
+  }
 }
