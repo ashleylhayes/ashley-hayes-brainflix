@@ -10,9 +10,19 @@ body {
     font-family: $font-stack;
 }
 
+.current-video__comment-form {
+    @include desktop {
+        max-width: 727px;
+    }
+}
+
 .current-video__comment-form-container {
     display: flex;
     border-bottom: 1px solid #E1E1E1;
+
+    @include tablet {
+        padding-bottom: 14px;
+    }
 }
 
 .current-video__avatar-container {
@@ -82,11 +92,12 @@ body {
     margin: 0 0 24px 0;
 
     @include tablet {
-        margin: 0 0 0 16px;
+        position: absolute;
+        margin: 4px 0 0 16px;
         width: 160px;
     }
 
     @include desktop {
-        margin: 0 0 12px 12px;
+        margin: 4px 0 12px 12px;
     }
 }
