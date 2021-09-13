@@ -5,7 +5,7 @@ import uploadThumbnail from '../../assets/Images/Upload-video-preview.jpg';
 import axios from 'axios';
 import {v4 as uuidv4} from 'uuid';
 
-const URL = "/videos";
+const URL = "https://fast-plains-50193.herokuapp.com/videos/";
 
 class VideoUpload extends React.Component {
 

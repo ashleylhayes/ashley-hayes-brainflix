@@ -12,7 +12,7 @@ import viewsIcon from '../../assets/Icons/SVG/Icon-views.svg';
 import likesIcon from '../../assets/Icons/SVG/Icon-likes.svg';
 import axios from 'axios';
 
-const URL = "/videos/";
+const URL = "https://fast-plains-50193.herokuapp.com/videos/";
 
 class CurrentVideo extends React.Component {
     state = {
