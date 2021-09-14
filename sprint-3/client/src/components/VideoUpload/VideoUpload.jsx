@@ -57,7 +57,9 @@ class VideoUpload extends React.Component {
             console.log(error)
         })
 
-        window.location.replace(URL)
+        setTimeout(() => {
+            this.props.history.push('/')
+        }, 1300);
     }
 
 

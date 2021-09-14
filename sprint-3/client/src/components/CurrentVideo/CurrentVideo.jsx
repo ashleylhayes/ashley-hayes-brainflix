@@ -42,6 +42,7 @@ class CurrentVideo extends React.Component {
     };
 
     componentDidUpdate(prevProps, prevState) {
+        window.scrollTo(0, 0)
         const { match } = this.props;
         const ID = match.params.id ? match.params.id : '1af0jruup5gu';
         if (match.params.id !== this.state.currentVideoContent.id) {
