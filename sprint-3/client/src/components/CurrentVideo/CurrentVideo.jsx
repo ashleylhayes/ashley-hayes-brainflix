@@ -10,6 +10,7 @@ import expandIcon from '../../assets/Icons/SVG/Icon-fullscreen.svg';
 import volumeIcon from '../../assets/Icons/SVG/Icon-volume.svg';
 import viewsIcon from '../../assets/Icons/SVG/Icon-views.svg';
 import likesIcon from '../../assets/Icons/SVG/Icon-likes.svg';
+import loadingGif from '../../assets/Images/loading.gif';
 import axios from 'axios';
 
 const URL = "https://fast-plains-50193.herokuapp.com/videos/";
@@ -42,7 +43,6 @@ class CurrentVideo extends React.Component {
     };
 
     componentDidUpdate(prevProps, prevState) {
-        window.scrollTo(0, 0)
         const { match } = this.props;
         const ID = match.params.id ? match.params.id : '1af0jruup5gu';
         if (match.params.id !== this.state.currentVideoContent.id) {
@@ -58,6 +58,7 @@ class CurrentVideo extends React.Component {
     };
 
     render() {
+        if(this.state.sideVideoContent.length > 0) {
         return (
             <div>
             <Header />
@@ -129,6 +130,14 @@ class CurrentVideo extends React.Component {
             </section>
             </div>
         );
+        } else {
+            return (
+                <div className='loading'>
+                    <img className='loading__image' src={loadingGif} alt='Rotating grey loading gif' />
+                    <h3>Loading Videos...</h3>
+                </div>
+            )
+        }
     };
 };
 

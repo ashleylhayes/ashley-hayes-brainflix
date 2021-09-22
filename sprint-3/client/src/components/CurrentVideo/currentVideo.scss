@@ -286,3 +286,16 @@ body {
 .next-video__link {
     text-decoration: none;
 }
+
+.loading {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+        margin-bottom: 30px;
+    }
+}
